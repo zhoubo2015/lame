@@ -1,0 +1,30 @@
+lame编译步骤
+
+1、下载编译脚本：https://github.com/kewlbear/lame-ios-build 
+2、下载lame：http://lame.sourceforge.net
+3、新建文件夹用来存放下载下来的源码和脚本文件 将下载的lame-3.99.5重命名为lame
+
+文件中
+
+
+4、在新建的文件夹下运行：./build-lame.sh，运行结果如下图
+
+但是，在看了很多帖子都成功了，生成了对应的文件夹和库文件。但是我的shell语句执行错误了，就是不成功。 其中搜索arm64时，后面有一句报错是：error: tool 'xcodebuild' requires Xcode, but active developer directory。
+
+上网搜了原因，是因为更新xcode后无法确定路径
+
+
+所以重新操作。
+
+（1）先执行命令：sudo xcode-select --switch /Applications/Xcode.app（后面的地址直接打开程序把Xcode往这里拖即可)；
+
+（2）打开终端 cd 到 lamebuild 文件夹；
+
+（3）执行命令 ./build.sh
+
+执行成功，生成对应的文件夹和文件。后续的就和别人的介绍的差不多了。
+————————————————
+
+                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
+                        
+原文链接：https://blog.csdn.net/u013133038/article/details/131140649
